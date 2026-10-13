@@ -97,7 +97,8 @@ sudo modprobe snd_hda_codec_alc269
 sleep 1
 
 echo "==> Verifying..."
-if dmesg -T | grep -q "picked fixup.*for PCI SSID ${CODEC_SUBSYSTEM_EXPECTED#0x}"; then
+CODEC_SUBSYSTEM_COLON="${CODEC_SUBSYSTEM_EXPECTED:2:4}:${CODEC_SUBSYSTEM_EXPECTED:6:4}"
+if dmesg -T | grep -q "picked fixup.*for PCI SSID ${CODEC_SUBSYSTEM_COLON}"; then
     echo "    SUCCESS: fixup picked via PCI SSID match."
 else
     echo "WARNING: could not confirm the fixup was picked via dmesg. Check manually:"

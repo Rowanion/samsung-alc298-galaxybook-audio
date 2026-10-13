@@ -74,7 +74,7 @@ sudo cp -a "${WORKDIR}/linux-${KVER_BASE}/sound/hda/common" "$SRC_DIR/sound/hda/
 sudo tee "$SRC_DIR/dkms.conf" > /dev/null <<EOF
 PACKAGE_NAME="${PKG_NAME}"
 PACKAGE_VERSION="${PKG_VERSION}"
-BUILT_MODULE_NAME[0]="snd_hda_codec_alc269"
+BUILT_MODULE_NAME[0]="snd-hda-codec-alc269"
 BUILT_MODULE_LOCATION[0]="sound/hda/codecs/realtek"
 DEST_MODULE_LOCATION[0]="/updates/sound/hda/codecs/realtek"
 AUTOINSTALL="yes"
